@@ -1,27 +1,9 @@
 # ember-cli-global-eval-patch
 
-This README outlines the details of collaborating on this Ember addon.
+This ember-cli addon patches jquery's globalEval security issue.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-global-eval-patch`
-* `npm install`
-* `bower install`
+* `ember install ember-cli-global-eval-patch`
 
-## Running
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
