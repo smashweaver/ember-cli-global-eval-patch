@@ -1,12 +1,15 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Application from '@ember/application';
+import { run } from '@ember/runloop';
+
 import { initialize, _globalEval, _textScriptConverter } from 'dummy/initializers/global-eval-patch';
 import { module, test } from 'qunit';
 import destroyApp from '../../helpers/destroy-app';
 
 module('Unit | Initializer | global eval patch', {
   beforeEach() {
-    Ember.run(() => {
-      this.application = Ember.Application.create();
+    run(() => {
+      this.application = Application.create();
       this.application.deferReadiness();
     });
   },
@@ -18,6 +21,6 @@ module('Unit | Initializer | global eval patch', {
 test('it works', function(assert) {
   initialize(this.application);
 
-  assert.ok(_globalEval === Ember.$.globalEval);
-  assert.ok(_textScriptConverter === Ember.$.ajaxSetup()['converters']['text script']);
+  assert.ok(_globalEval === $.globalEval);
+  assert.ok(_textScriptConverter === $.ajaxSetup()['converters']['text script']);
 });

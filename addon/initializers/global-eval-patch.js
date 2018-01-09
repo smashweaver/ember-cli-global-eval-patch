@@ -1,13 +1,12 @@
-import Ember from 'ember';
-
+import $ from 'jquery';
 export const _globalEval = () => {};
 
 export const _textScriptConverter = text => { return text; };
 
-export function initialize() {
-  Ember.$.globalEval = _globalEval;
+export function initialize(/* application */) {
+  $.globalEval = _globalEval;
 
-  Ember.$.ajaxSetup({
+  $.ajaxSetup({
     converters: {
       'text script': _textScriptConverter
     }
@@ -15,6 +14,5 @@ export function initialize() {
 }
 
 export default {
-  name: 'global-eval-patch',
   initialize
 };
